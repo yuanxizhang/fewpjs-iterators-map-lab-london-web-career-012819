@@ -14,12 +14,9 @@ const tutorials = [
 
 
 function toTitleCase(str) {
-        return str.replace(
-            /\w\S*/g,
-            function(txt) {
-                return txt.charAt(0).toUpperCase() + txt.substr(1);
-            }
-        );
+        return str.split(' ')
+                  .map(w => w[0].toUpperCase() + w.substr(1))
+                  .join(' ');
 }
 
 const titleCased = () => tutorials.map (str => toTitleCase(str));
